@@ -1,11 +1,29 @@
 <div class="container">
+  <div class="contiene-add-new-btn">
+    <%= link_to 'Agregar nuevo Todo', todos_new_path, class: 'btn btn-primary btn-sm' %>
+  </div>
+
+
   <% @todos.each do |todo| %>
-    <div class="well">
-      <h1> <%= todo.completed %> </h1>
-      <p> <%= todo.description %> </p>
-      <%= link_to 'Show', todo %>
-      <%= link_to 'Editar', edit_path(todo) %>
-      <%= link_to "Eliminar", todo, method: :delete %>
+    <div class="card">
+      <div class="card-header">
+
+        <!-- <%= form_with model: @todo, local: true do |f| %> -->
+
+        <div class="form-group">
+          <%= f.label :completed, "Completo"%>
+          <%= f.check_box :completed %>
+        </div>
+
+        <!-- <% end %> -->
+
+        <%= todo.description %>
+      </div>
+      <div class="card-body">
+        <%= link_to 'Show', todo, class: 'btn btn-info btn-sm' %>
+        <%= link_to 'Editar', edit_path(todo), class: 'btn btn-success btn-sm' %>
+        <%= link_to "Eliminar", todo, method: :delete, class: 'btn btn-danger btn-sm' %>
+      </div>
     </div>
 
   <% end %>

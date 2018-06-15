@@ -1,24 +1,20 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">ToDo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+          <%= link_to 'Index', todos_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+          <%= link_to 'List', todos_list_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+          <%= link_to 'Nuevo', todos_new_path, class: 'nav-link' %>
+      </li>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="nav-item"><%= link_to 'Index', todos_path  %></li>
-        <li class="nav-item"> <%= link_to 'List', todos_list_path %></li>
-        <li class="nav-item"> <%= link_to 'Nuevo', todos_new_path %></li>
-
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </ul>
+  </div>
 </nav>

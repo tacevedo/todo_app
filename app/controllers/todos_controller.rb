@@ -31,8 +31,8 @@ class TodosController < ApplicationController
   end
 
   def complete
-    @todo.completed = true
-    # @todo.update(todo_params)
+
+    @todo.update(todo_params)
     redirect_to todos_path
   end
 
