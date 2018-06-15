@@ -1,6 +1,13 @@
-<%= @todos.each do |todo| %>
+<div class="container">
+  <% @todos.each do |todo| %>
+    <div class="well">
+      <h1> <%= todo.completed %> </h1>
+      <p> <%= todo.description %> </p>
+      <%= link_to 'Show', todo %>
+      <%= link_to 'Editar', edit_path(todo) %>
+      <%= link_to "Eliminar", todo, method: :delete %>
+    </div>
 
-  <h1> <%= todo.completed %> </h1>
-  <p> <%= todo.description %> </p>
+  <% end %>
 
-<% end %>
+</div>

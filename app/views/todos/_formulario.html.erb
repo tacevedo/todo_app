@@ -1,0 +1,16 @@
+<%= form_with model: @todo, local: true do |f| %>
+  <!-- <input type="hidden" value="<%=form_authenticity_token%>"name="authenticity_token"> -->
+
+  <div class="">
+    <%= f.label :description, "Descripcion" %>
+    <%= f.text_field :description %>
+
+    <%= f.check_box :completed  %>
+    <%= f.label :completed, "Completo"%>
+
+  </div>
+
+  <div class="">
+    <%= f.submit "Send" %>
+  </div>
+<% end %>

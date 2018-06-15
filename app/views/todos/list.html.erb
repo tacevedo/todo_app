@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="col-sm-6">
+    <h2>Pendientes</h2>
+    <% @pendientes.each do |todo| %>
+      <!-- <%= check_box_tag(:completed) %>
+      <%= label_tag(:completed, "Completo") %> -->
+      <p> <%= todo.description %> </p>
+      <!-- <%= link_to 'Show', todo %>
+      <%= link_to 'Editar', todo %>
+      <%= link_to "Eliminar", todo, method: :delete %> -->
+    <% end %>
+
+  </div>
+  <div class="col-sm-6">
+    <h2>Completados</h2>
+    <% @completos.each do |todo| %>
+      <!-- <%= check_box_tag(:completed) %>
+      <%= label_tag(:completed, "Completo") %> -->
+      <p><%= todo.completed %></p>
+      <p> <%= todo.description %> </p>
+      <!-- <%= link_to 'Show', todo %>
+      <%= link_to 'Editar', todo %>
+      <%= link_to "Eliminar", todo, method: :delete %> -->
+    <% end %>
+
+  </div>
+</div>
