@@ -21,6 +21,7 @@ class TodosController < ApplicationController
   end
 
   def update
+    # fail
     @todo.update(todo_params)
     redirect_to todos_path
   end
@@ -31,8 +32,7 @@ class TodosController < ApplicationController
   end
 
   def complete
-
-    @todo.update(todo_params)
+    @todo.update(:completed => true)
     redirect_to todos_path
   end
 

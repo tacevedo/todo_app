@@ -7,20 +7,18 @@
   <% @todos.each do |todo| %>
     <div class="card">
       <div class="card-header">
-
-        <%= form_with model: todo, local: true do |f| %>
-          <div class="form-group">
-            <%= f.label :completed, "Completo"%>
-            <%= f.check_box :completed %>
-            <!-- <input type="checkbox" value="" name="todo[completed]" id="todo_completed" url="complete_path"> -->
-          </div>
-        <% end %>
-
+        <div class="form-group">
+          <% if !todo.completed %>
+            <%= link_to 'Completar', complete_path(todo), class: 'btn btn-success btn-sm', :disabled => false %>
+          <% else %>
+            <%= link_to 'Listo', complete_path(todo), class: 'btn btn-success btn-sm disabled', :disabled => true %>
+          <% end %>
+        </div>
         <%= todo.description %>
       </div>
       <div class="card-body">
         <%= link_to 'Show', todo, class: 'btn btn-info btn-sm' %>
-        <%= link_to 'Editar', edit_path(todo), class: 'btn btn-success btn-sm' %>
+        <%= link_to 'Editar', edit_path(todo), class: 'btn btn-warning btn-sm' %>
         <%= link_to "Eliminar", todo, method: :delete, class: 'btn btn-danger btn-sm' %>
       </div>
     </div>
